@@ -26,3 +26,7 @@ npm run build-prod
 ```shell
 npm run clear
 ```
+
+### Формат документа
+``` f1 + forma document
+```
