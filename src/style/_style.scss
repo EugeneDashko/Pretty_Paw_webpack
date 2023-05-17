@@ -115,7 +115,7 @@ iframe {
   font-size: 16px;
   line-height: 1;
   color: $back;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border-radius: 80px;
 
   &:after {
@@ -124,6 +124,12 @@ iframe {
     width: 16px;
     height: 16px;
     background: url('../img/arrow-right.svg') center/contain no-repeat;
+  }
+
+  @include lg {
+    padding: 17px 32px;
+    font-size: 20px;
+    gap: 10px;
   }
 }
 
