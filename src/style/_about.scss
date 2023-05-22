@@ -5,25 +5,58 @@
         padding: 100px 0;
     }
 }
-.container {
-}
+
 .about__container {
 }
 .about__title {
+    font-weight: 1000;
+    font-size: 32px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: $second;
+    margin-bottom: 24px;
+
+    @include lg {
+        font-size: 52px;
+    }
+
 }
 .about__content {
+    margin-bottom: 13px;
+    background-image: url('../img/paw.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-bottom: 27px;
+
+    @include md {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        grid-template-areas:
+            'about__description about__count-list'
+            'about__link .';
+    }
 }
 .about__description {
+    margin-bottom: 24px;
 }
 .about__link {
+    margin-bottom: 40px;
 }
 .link__main {
 }
 .about__count-list {
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    gap: 20px;
+    font-weight: 1000;
+    color: $second;
+    line-height: 1;
 }
-.about__count-item {
-}
+
 .about__count {
+    font-size: 40px;
+    margin-bottom: 16px;
 }
 .about__count-desc {
 }
