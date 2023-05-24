@@ -68,6 +68,8 @@
         'about__count-list'
         'about__link';
         background-position: center;
+    }
+    @include xl {
         gap: 60px;
     }
 }

@@ -1,0 +1,34 @@
+.location {
+}
+.visually-hidden {
+}
+.location__list {
+}
+.location__item {
+    position: relative;
+    padding: 50px 16px;
+    min-height: 273px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1; // картинку под текст
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+    }
+}
+.location__item_mammals {
+}
+.location__title {
+}
+.location__description {
+}
+.location__item_birds {
+}
+.location__item_reptiles {
+}
+.location__item_water {
+}
+.location__item_insects {
+}
