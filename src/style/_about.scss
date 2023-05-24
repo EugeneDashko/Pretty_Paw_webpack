@@ -10,9 +10,18 @@
     @include lg {
         display: grid;
         grid-template-columns: 48% 1fr;
+        gap: 40px 20px;
         grid-template-areas:
-            'about__title .'
+            'about__title about__title'
             'about__slider about__content';
+    }
+    @include xl {
+        grid-template-rows: min-content 1fr;
+        gap: 40px 30px;
+        grid-template-areas:
+            'about__slider about__title'
+            'about__slider about__content';
+
     }
 }
 .about__title {
@@ -25,7 +34,8 @@
 
     @include lg {
         font-size: 52px;
-        grid-area: title;
+        grid-area: about__title;
+        margin-bottom: 0;
     }
 
 }
@@ -47,7 +57,18 @@
         background-position: right bottom;
     }
     @include lg {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+        gap: 40px;
+        margin-bottom: 0;
+        padding-bottom: 0;
         grid-area: about__content;
+        grid-template-areas:
+        'about__description'
+        'about__count-list'
+        'about__link';
+        background-position: center;
+        gap: 60px;
     }
 }
 .about__description {
@@ -64,11 +85,16 @@
     @include md {
         grid-area: about__link;
         margin-bottom: 0;
-        justify-self: start;
+        justify-self: start; // погоризонтали к левому краю
+    }
+    @include lg {
+        align-self: end; //по вертикале к низу
     }
 }
+
 .link__main {
 }
+
 .about__count-list {
     display: grid;
     grid-template-columns: repeat(2, 120px);
@@ -80,24 +106,35 @@
     @include md {
         grid-area: about__count-list;
     }
+    @include lg {
+        grid-template-columns: repeat(2, 200px);
+    }
 }
 
 .about__count {
     font-size: 40px;
     margin-bottom: 16px;
+
+    @include lg {
+        font-size: 52px;
+    }
 }
 .about__count-desc {
 }
 .about__picture {
-}
-.about__slider {
     @include lg {
         grid-area: about__slider;
     }
 }
+.about__slider {
+
+}
 .swiper {
 }
 .about__image-list {
+}
+.about__image {
+    border-radius: 16px;
 }
 .swiper-wrapper {
 }
