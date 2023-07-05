@@ -28,8 +28,10 @@ npm run clear
 ```
 
 ### Формат документа
-``` f1 + forma document
+```shell
+f1 + forma document
 ```
 
 ## типограф
+```shell
  (неразрывные пробелы)
