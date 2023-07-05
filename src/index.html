@@ -69,13 +69,13 @@
           <div class="about__slider swiper">
             <ul class="about__image-list swiper-wrapper">
               <li class="about__image-item swiper-slide">
-                <picture class="about__image-wrapper">
+                <picture class="about__image-wrapper">  <!-- picture необходим чтобы внутри расположить все картинки для mobile, tablet, laptop, desctop. Служит контейнером для source-->
                   <source srcset="img/leo_desktop.webp" media="(min-width: 1280px)" type="image/webp">
                   <source srcset="img/leo_desktop.jpg" media="(min-width: 1280px)">
                   <source srcset="img/leo_laptop.webp" media="(min-width: 1024px)" type="image/webp">
                   <source srcset="img/leo_laptop.jpg" media="(min-width: 1024px)">
                   <source srcset="img/leo_tablet.webp" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="img/leo_tablet.jpg" media="(min-width: 768px)">
+                  <source srcset="img/leo_tablet.jpg" media="(min-width: 768px)"> <!--будет загружаться когда экран будет больше 768-->
                   <source srcset="img/leo.webp" type="image/webp">
                   <img class="about__image" src="img/leo.jpg" alt="Пара львов" loading="lazy">
                 </picture>
@@ -125,25 +125,29 @@
         </div>
       </div>
     </section>
-    <section class="location">
-      <h2 class="visually-hidden">Локации зоопарка</h2>
+    <section class="location"> <!--конейнер не нужен, потому что фон на всю ширину-->
+      <h2 class="visually-hidden">Локации зоопарка</h2> <!--скрытый заголовок нужен для SEO и  для людей которые не видят-->
       <ul class="location__list">
         <li class="location__item location__item_mammals">
           <h3 class="location__title">Млекопитающие</h3>
           <p class="location__description">В&nbsp;эту группу входят животные, которые питаются молоком в&nbsp;раннем возрасте и&nbsp;обладают механизмом регуляции телевой температуры. В&nbsp;нашем зоосаде можно увидеть млекопитающих, таких как львы, тигры, слоны и&nbsp;обезьяны.</p>
         </li>
+
         <li class="location__item location__item_birds">
           <h3 class="location__title">Птицы</h3>
           <p class="location__description">Эта группа включает в&nbsp;себя разнообразных пернатых обитателей зоопарка, от&nbsp;маленьких певчих птиц до&nbsp;больших драпированных птиц хищников. В&nbsp;нашем зоосаде можно увидеть таких птиц, как фламинго, аисты, орлы и&nbsp;павлины.</p>
         </li>
+
         <li class="location__item location__item_reptiles">
           <h3 class="location__title">Рептилии</h3>
           <p class="location__description">В&nbsp;эту группу входят животные, которые имеют чешуйчатую кожу и&nbsp;обладают приспособлениями для жизни на&nbsp;суше или в&nbsp;воде. В&nbsp;нашем зоосаде можно увидеть таких рептилий, как крокодилы, змеи, черепахи и&nbsp;ящерицы.</p>
         </li>
+
         <li class="location__item location__item_water">
           <h3 class="location__title">Водный мир</h3>
           <p class="location__description">В&nbsp;эту группу входят животные, которые живут в&nbsp;воде или зависят от&nbsp;воды для выживания. В&nbsp;нашем зоосаде можно увидеть разнообразных рыб, дельфинов, китов, акул и&nbsp;других водных животных.</p>
         </li>
+
         <li class="location__item location__item_insects">
           <h3 class="location__title">Насекомые</h3>
           <p class="location__description">В&nbsp;эту группу входят разнообразные насекомые, такие как бабочки, жуки, муравьи и&nbsp;пчелы. В&nbsp;нашем зоосаде можно увидеть различных беспозвоночных и&nbsp;насекомых.</p>
@@ -246,12 +250,12 @@
       </ul>
 
       <ul class="footer__developers">
-        <li class="footer__developer">Designer: <a href="#!">Anastasia Ilina</a></li>
+        <li class="footer__developer">Designer: <a href="#!">Dashko Yauheni</a></li>
+
         <li class="footer__developer">Developer: <a href="#!">Dashko Yauheni</a></li>
       </ul>
 
       <p class="footer__copyright">&copy; PrettyPaw, 2023</p>
-
     </div>
   </footer>
 </body>
