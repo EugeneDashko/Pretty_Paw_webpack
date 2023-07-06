@@ -118,6 +118,7 @@ iframe {
   background-color: #FFFFFF;
   border-radius: 80px;
 
+  // стрелка в кнопке:
   &:after {
     content: '';
     display: block;

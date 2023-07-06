@@ -2,6 +2,7 @@ $back: #FFAA05;
 $main: #000000;
 $second: #FFFFFF;
 
+//
 @mixin sm {
     @media (min-width: 576px) {
         @content;
