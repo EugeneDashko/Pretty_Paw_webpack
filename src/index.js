@@ -1,8 +1,8 @@
 import './index.html';
 
 //new modules:
-import 'swiper/scss';
-import 'swiper/scss/pagination';
+import 'swiper/scss'; // из mobule swiper (импортировали стили для свайпера из библиотеки swiper)
+import 'swiper/scss/pagination';// из mobule swiper
 import './index.scss';
 import { sliderInit } from './modules/sliders';
 
