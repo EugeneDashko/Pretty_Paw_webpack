@@ -9,6 +9,12 @@
     padding: 50px 16px;
     min-height: 273px;
 
+    @include sm {
+        padding-left: 32px;
+        padding-right: 32px;
+        min-height: 200px;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -34,30 +40,112 @@
 .location__item_mammals:before {
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
     url('../img/mammals.jpg');
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+    image-set(url('../img/mammals_2x.webp') 2x,
+    url('../img/mammals_2x.jpg') 2x,
+    url('../img/mammals.webp') 1x,
+    url('../img/mammals.jpg') 1x);
+
+    @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        url('../img/mammals_tablet.jpg');
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        image-set(url('../img/mammals_tablet_2x.webp') 2x,
+        url('../img/mammals_tablet_2x.jpg') 2x,
+        url('../img/mammals_tablet.webp') 1x,
+        url('../img/mammals_tablet.jpg') 1x);
+    }
 }
 
 .location__item_birds:before {
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
     url('../img/birds.jpg');
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+    image-set(url('../img/birds_2x.webp') 2x,
+    url('../img/birds_2x.jpg') 2x,
+    url('../img/birds.webp') 1x,
+    url('../img/birds.jpg') 1x);
+
+    @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        url('../img/birds_tablet.jpg');
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        image-set(url('../img/birds_tablet_2x.webp') 2x,
+        url('../img/birds_tablet_2x.jpg') 2x,
+        url('../img/birds_tablet.webp') 1x,
+        url('../img/birds_tablet.jpg') 1x);
+    }
 
 }
 .location__item_reptiles:before {
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
     url('../img/reptiles.jpg');
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+    image-set(url('../img/reptiles_2x.webp') 2x,
+    url('../img/reptiles_2x.jpg') 2x,
+    url('../img/reptiles.webp') 1x,
+    url('../img/reptiles.jpg') 1x);
+
+    @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        url('../img/reptiles_tablet.jpg');
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        image-set(url('../img/reptiles_tablet_2x.webp') 2x,
+        url('../img/reptiles_tablet_2x.jpg') 2x,
+        url('../img/reptiles_tablet.webp') 1x,
+        url('../img/reptiles_tablet.jpg') 1x);
+    }
 }
 .location__item_water:before {
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
     url('../img/water.jpg');
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+    image-set(url('../img/water_2x.webp') 2x,
+    url('../img/water_2x.jpg') 2x,
+    url('../img/water.webp') 1x,
+    url('../img/water.jpg') 1x);
+
+    @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        url('../img/water_tablet.jpg');
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        image-set(url('../img/water_tablet_2x.webp') 2x,
+        url('../img/water_tablet_2x.jpg') 2x,
+        url('../img/water_tablet.webp') 1x,
+        url('../img/water_tablet.jpg') 1x);
+    }
 }
 .location__item_insects:before {
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
     url('../img/insects.jpg');
-}
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+    image-set(url('../img/insects_2x.webp') 2x,
+    url('../img/insects_2x.jpg') 2x,
+    url('../img/insects.webp') 1x,
+    url('../img/insects.jpg') 1x);
 
-.location__description {
-
+    @include sm {
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        url('../img/insects_tablet.jpg');
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%),
+        image-set(url('../img/insects_tablet_2x.webp') 2x,
+        url('../img/insects_tablet_2x.jpg') 2x,
+        url('../img/insects_tablet.webp') 1x,
+        url('../img/insects_tablet.jpg') 1x);
+    }
 }
 
 .location__title{
+    color: $back;
+    font-size: 20px;
+    font-weight: 1000;
+    line-height: 1;
+    text-transform: uppercase;
+}
 
+.location__description {
+    color: $second;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1;
 }
