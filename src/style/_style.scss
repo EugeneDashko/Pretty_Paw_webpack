@@ -135,13 +135,13 @@ iframe {
 }
 
 
-.swiper-pagination-bullet {
+.swiper-pagination-bullet {  // задаю стили swiper
   width: 10px;
   height: 10px;
   border-radius: 16px;
   background-color: $second;
   opacity: 1;
-  transition: width .3s;
+  transition: width .3s; // делаю плавным
 }
 
 .swiper-pagination-bullet-active {

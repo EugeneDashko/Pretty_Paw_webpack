@@ -6,7 +6,7 @@ const params = {
         delay: 3500,
         disableOnInteraction: false,
     },
-    sliderPerView: 1,
+    sliderPerView: 1, // кол-во отображаемых файлов
     pagination: {
         el: '.swiper-pagination',
     },
