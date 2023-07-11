@@ -6,13 +6,13 @@ const params = {
         delay: 3500,
         disableOnInteraction: false,
     },
-    sliderPerView: 1, // кол-во отображаемых файлов
+    slidesPerView: 1, // кол-во отображаемых файлов
     pagination: {
         el: '.swiper-pagination',
     },
     modules: [Autoplay, Pagination]
 };
-export const sliderInit = (selectorSlider, newParams) => {
+export const slidersInit = (selectorSlider, newParams) => {
     new Swiper (selectorSlider, {
         ...params,
         ...newParams,
