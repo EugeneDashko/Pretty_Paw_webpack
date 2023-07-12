@@ -72,6 +72,10 @@
     @include xl {
         gap: 60px;
     }
+    @include xxl {
+        max-height: 500px;
+        height: min-content;
+    }
 }
 .about__description {
     margin-bottom: 24px;
