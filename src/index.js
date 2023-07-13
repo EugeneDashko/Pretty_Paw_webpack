@@ -6,9 +6,11 @@ import 'swiper/scss/pagination';// из mobule swiper
 import './index.scss';
 import { slidersInit } from './modules/sliders.js';
 import { videoBackgroundInit } from './modules/videoBackGround.js';
+import { menuControl } from './modules/menuControl.js';
 
 //use modules
 videoBackgroundInit();
+menuControl();
 
 slidersInit('.about__slider', {
     pagination: {
