@@ -5,8 +5,11 @@ import 'swiper/scss'; // из mobule swiper (импортировали стил
 import 'swiper/scss/pagination';// из mobule swiper
 import './index.scss';
 import { slidersInit } from './modules/sliders.js';
+import { videoBackgroundInit } from './modules/videoBackGround.js';
 
 //use modules
+videoBackgroundInit();
+
 slidersInit('.about__slider', {
     pagination: {
         el: '.about__slider-pagination',
@@ -39,9 +42,3 @@ slidersInit('.career__slider', {
       }
 })
 
-const videoBG = document.querySelector('.video-bg');
-
-videoBG.innerHTML = `
-<source src="video/video.webm" type="video/webm">
-<source src="video/video.mp4" type="video/mp4">
-`;

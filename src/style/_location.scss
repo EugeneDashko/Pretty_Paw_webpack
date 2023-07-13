@@ -1,8 +1,11 @@
 .location {
+    position: relative;
 }
 .visually-hidden {
 }
 .location__list {
+    position: relative;
+    z-index: 10;
     @include lg {
         display: flex;
         min-height: 552px;
@@ -52,6 +55,15 @@
         display: none;
     }
 }
+
+.video-bg {
+    display: none;
+
+    @include lg {
+        display: block;
+    }
+}
+
 
 
 .location__item {
@@ -106,6 +118,10 @@
         inset: 0;
         background-size: cover;
         background-position: center;
+
+        @include lg {
+            background-image: none;
+        }
     }
 }
 .location__item_mammals:before {
@@ -127,15 +143,15 @@
         url('../img/mammals_tablet.jpg') 1x);
     }
 
-    @include lg {
-        background-image:
-        url('../img/mammals_laptop.jpg');
-        background-image:
-        image-set(url('../img/mammals_laptop.webp') 1x,
-        url('../img/mammals_laptop.jpg') 1x,
-        url('../img/mammals_laptop_2x.webp') 2x,
-        url('../img/mammals_laptop_2x.jpg') 2x);
-    }
+    // @include lg {
+    //     background-image:
+    //     url('../img/mammals_laptop.jpg');
+    //     background-image:
+    //     image-set(url('../img/mammals_laptop.webp') 1x,
+    //     url('../img/mammals_laptop.jpg') 1x,
+    //     url('../img/mammals_laptop_2x.webp') 2x,
+    //     url('../img/mammals_laptop_2x.jpg') 2x);
+    // }
 }
 
 .location__item_birds:before {
@@ -157,15 +173,15 @@
         url('../img/birds_tablet.jpg') 1x);
     }
 
-    @include lg {
-        background-image:
-        url('../img/birds_laptop.jpg');
-        background-image:
-        image-set(url('../img/birds_laptop.webp') 1x,
-        url('../img/birds_laptop.jpg') 1x,
-        url('../img/birds_laptop_2x.webp') 2x,
-        url('../img/birds_laptop_2x.jpg') 2x);
-    }
+    // @include lg {
+    //     background-image:
+    //     url('../img/birds_laptop.jpg');
+    //     background-image:
+    //     image-set(url('../img/birds_laptop.webp') 1x,
+    //     url('../img/birds_laptop.jpg') 1x,
+    //     url('../img/birds_laptop_2x.webp') 2x,
+    //     url('../img/birds_laptop_2x.jpg') 2x);
+    // }
 
 }
 .location__item_reptiles:before {
@@ -187,15 +203,15 @@
         url('../img/reptiles_tablet.jpg') 1x);
     }
 
-    @include lg {
-        background-image:
-        url('../img/reptiles_laptop.jpg');
-        background-image:
-        image-set(url('../img/reptiles_laptop.webp') 1x,
-        url('../img/reptiles_laptop.jpg') 1x,
-        url('../img/reptiles_laptop_2x.webp') 2x,
-        url('../img/reptiles_laptop_2x.jpg') 2x);
-    }
+    // @include lg {
+    //     background-image:
+    //     url('../img/reptiles_laptop.jpg');
+    //     background-image:
+    //     image-set(url('../img/reptiles_laptop.webp') 1x,
+    //     url('../img/reptiles_laptop.jpg') 1x,
+    //     url('../img/reptiles_laptop_2x.webp') 2x,
+    //     url('../img/reptiles_laptop_2x.jpg') 2x);
+    // }
 }
 .location__item_water:before {
     background-image:
@@ -216,15 +232,15 @@
         url('../img/water_tablet.jpg') 1x);
     }
 
-    @include lg {
-        background-image:
-        url('../img/water_laptop.jpg');
-        background-image:
-        image-set(url('../img/water_laptop.webp') 1x,
-        url('../img/water_laptop.jpg') 1x,
-        url('../img/water_laptop_2x.webp') 2x,
-        url('../img/water_laptop_2x.jpg') 2x);
-    }
+    // @include lg {
+    //     background-image:
+    //     url('../img/water_laptop.jpg');
+    //     background-image:
+    //     image-set(url('../img/water_laptop.webp') 1x,
+    //     url('../img/water_laptop.jpg') 1x,
+    //     url('../img/water_laptop_2x.webp') 2x,
+    //     url('../img/water_laptop_2x.jpg') 2x);
+    // }
 }
 .location__item_insects:before {
     background-image:
@@ -245,14 +261,14 @@
         url('../img/insects_tablet.jpg') 1x);
     }
 
-    @include lg {
-        background-image:
-        url('../img/insects_laptop.jpg');
-        background-image:
-        image-set(url('../img/insects_laptop.webp') 1x,
-        url('../img/insects_laptop.jpg') 1x,
-        url('../img/insects_laptop_2x.webp') 2x,
-        url('../img/insects_laptop_2x.jpg') 2x);
-    }
+    // @include lg {
+    //     background-image:
+    //     url('../img/insects_laptop.jpg');
+    //     background-image:
+    //     image-set(url('../img/insects_laptop.webp') 1x,
+    //     url('../img/insects_laptop.jpg') 1x,
+    //     url('../img/insects_laptop_2x.webp') 2x,
+    //     url('../img/insects_laptop_2x.jpg') 2x);
+    // }
 }
 
