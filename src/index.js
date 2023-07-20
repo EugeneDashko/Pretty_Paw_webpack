@@ -16,6 +16,11 @@ slidersInit('.about__slider', {
     pagination: {
         el: '.about__slider-pagination',
     }
+});
+
+const careerImageItems = document.querySelectorAll('.career__image-item')
+careerImageItems.forEach((item, index)=> {
+  item.classList.add(`career__image-item_${index % 2 ? 'even' : 'odd'}`)
 })
 
 slidersInit('.career__slider', {
@@ -24,7 +29,7 @@ slidersInit('.career__slider', {
     },
     breakpoints: {
         // when window width is >= 320px
-        768: {
+        576: {
           slidesPerView: 'auto',
           spaceBetween: 20,
           pagination: false

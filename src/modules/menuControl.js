@@ -43,7 +43,7 @@ export const menuControl = () => {
             gsap.set(navigationList, { opacity: 0, display: 'none'});
             navigationItems.forEach((elem, i) => {
                 const x =i % 2 ? 500 : -500;
-                gsap.set(elem, {opacity: 0, x, duration:1})
+                gsap.set(elem, {opacity: 0, x, duration: 1})
             });
 
         };
