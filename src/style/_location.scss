@@ -1,274 +1,305 @@
 .location {
     position: relative;
-}
-.visually-hidden {
-}
-.location__list {
-    position: relative;
-    z-index: 10;
-    @include lg {
-        display: flex;
-        min-height: 552px;
-        justify-content: space-between;
-        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
-    }
-
-    @include xl {
-        min-height: 780px;
-    }
-
-    @include xxl {
-        min-height: 100vh;
-        max-width: 2560px;
-        margin: 0 auto;
-    }
-}
-
-.location__title{
-    color: $back;
-    font-size: 20px;
-    font-weight: 1000;
-    line-height: 1;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    white-space: nowrap; // не переносить по словам
-
-    @include lg {
-        position: absolute;
-        margin-bottom: 0;
-        top: 50%;
-        left: 50%;
-        transform: rotate(-90deg) translate(-50%, - 50%);
-        transform-origin: top left; // меняет точку от которой элемент поворачивается
-        color: $second;
-    }
-
-    @include xl {
-        font-size: 32px;
-    }
-}
-
-.location__description {
-    color: $second;
-
-    @include lg {
-        display: none;
-    }
-}
-
-.video-bg {
-    display: none;
-
-    @include lg {
-        display: block;
-    }
-}
-
-
-
-.location__item {
-    position: relative;
-    padding: 50px 16px;
-    min-height: 273px;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
-
-    @include sm {
-        padding-left: 32px;
-        padding-right: 32px;
-        min-height: 200px;
-    }
-
-    @include lg {
-        background-image: none;
-        flex: 0 0 calc(100%/5);// 0,0 - Запретим увеличиться и уменьшаться, 100/5 - все занимают одинаковое простарнство
-        padding: 0;
-    }
-
-    &:not(:last-child):after { // полоска
-        content: '';
-        position: absolute;
-        z-index: 5;
-        display: block;
-        bottom: 0;
-        right: 50%;
-        height: 0.5px;
-        width: calc(100% - 32px);
-        background-color: $second;
-        transform: translate(50%, 0.5px);
+    
+    &__list {
+        position: relative;
+        z-index: 10;
+        --opacity: 0;
+        --background-image: none;
 
         @include lg {
-            bottom: 50%;
-            right: 0;
-            transform: translate(0.5px, 50%);
-            height: calc(100% - 186px);
-            width: 0.5px;
+            display: flex;
+            min-height: 552px;
+            justify-content: space-between;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+            }
+
+            &::after {
+                content: 0;
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                background-position: center;
+                background-size: cover;
+                opacity: var(--opacity);
+                background-image: var(--background-image)
+            }
         }
 
         @include xl {
-            height: calc(100% - 200px);
+            min-height: 780px;
+        }
+
+        @include xxl {
+            min-height: 100vh;
+            max-width: 2560px;
+            margin: 0 auto;
+        }
+    }
+
+    &__content {
+        @include lg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: rotate(-90deg) translate(-50%, - 50%);
+            transform-origin: top left; // меняет точку от которой элемент поворачивается
+        }
+
+    }
+
+    &__title{
+        color: $back;
+        font-size: 20px;
+        font-weight: 1000;
+        line-height: 1;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        white-space: nowrap; // не переносить по словам
+
+        @include lg {
+            text-align: center;
+            color: $second;
+            margin-bottom: 0;
+            padding: 0 20px;
+
+        }
+
+        @include xl {
+            font-size: 32px;
+            padding: 0 30px;
+        }
+    }
+
+    &__description {
+        color: $second;
+
+        @include lg {
+            display: none;
+        }
+    }
+
+    .video-bg {
+        display: none;
+
+        @include lg {
+            display: block;
         }
     }
 
 
 
-    &::before {
-        content: '';
-        position: absolute;
-        z-index: -1; // картинку под текст
-        inset: 0;
-        background-size: cover;
-        background-position: center;
+    &__item {
+        position: relative;
+        padding: 50px 16px;
+        min-height: 273px;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+
+        @include sm {
+            padding-left: 32px;
+            padding-right: 32px;
+            min-height: 200px;
+        }
 
         @include lg {
             background-image: none;
+            // flex: 0 0 calc(100%/5);// 0,0 - Запретим увеличиться и уменьшаться, 100/5 - все занимают одинаковое простарнство
+            //  или так:
+            width: 20%;
+            padding: 0;
+        }
+
+        &:not(:last-child):after { // полоска
+            content: '';
+            position: absolute;
+            z-index: 5;
+            display: block;
+            bottom: 0;
+            right: 50%;
+            height: 0.5px;
+            width: calc(100% - 32px);
+            background-color: $second;
+            transform: translate(50%, 0.5px);
+
+            @include lg {
+                bottom: 50%;
+                right: 0;
+                transform: translate(0.5px, 50%);
+                height: calc(100% - 186px);
+                width: 0.5px;
+            }
+
+            @include xl {
+                height: calc(100% - 200px);
+            }
+        }
+
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1; // картинку под текст
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+
+            @include lg {
+                background-image: none;
+            }
         }
     }
-}
-.location__item_mammals:before {
-    background-image:
-    url('../img/mammals.jpg');
-    background-image:
-    image-set(url('../img/mammals_2x.webp') 2x,
-    url('../img/mammals_2x.jpg') 2x,
-    url('../img/mammals.webp') 1x,
-    url('../img/mammals.jpg') 1x);
+    &__item_mammals:before {
+        background-image:
+        url('../img/mammals.jpg');
+        background-image:
+        image-set(url('../img/mammals_2x.webp') 2x,
+        url('../img/mammals_2x.jpg') 2x,
+        url('../img/mammals.webp') 1x,
+        url('../img/mammals.jpg') 1x);
 
-    @include sm {
-        background-image:
-        url('../img/mammals_tablet.jpg');
-        background-image:
-        image-set(url('../img/mammals_tablet_2x.webp') 2x,
-        url('../img/mammals_tablet_2x.jpg') 2x,
-        url('../img/mammals_tablet.webp') 1x,
-        url('../img/mammals_tablet.jpg') 1x);
+        @include sm {
+            background-image:
+            url('../img/mammals_tablet.jpg');
+            background-image:
+            image-set(url('../img/mammals_tablet_2x.webp') 2x,
+            url('../img/mammals_tablet_2x.jpg') 2x,
+            url('../img/mammals_tablet.webp') 1x,
+            url('../img/mammals_tablet.jpg') 1x);
+        }
+
+        // @include lg {
+        //     background-image:
+        //     url('../img/mammals_laptop.jpg');
+        //     background-image:
+        //     image-set(url('../img/mammals_laptop.webp') 1x,
+        //     url('../img/mammals_laptop.jpg') 1x,
+        //     url('../img/mammals_laptop_2x.webp') 2x,
+        //     url('../img/mammals_laptop_2x.jpg') 2x);
+        // }
     }
 
-    // @include lg {
-    //     background-image:
-    //     url('../img/mammals_laptop.jpg');
-    //     background-image:
-    //     image-set(url('../img/mammals_laptop.webp') 1x,
-    //     url('../img/mammals_laptop.jpg') 1x,
-    //     url('../img/mammals_laptop_2x.webp') 2x,
-    //     url('../img/mammals_laptop_2x.jpg') 2x);
-    // }
-}
-
-.location__item_birds:before {
-    background-image:
-    url('../img/birds.jpg');
-    background-image:
-    image-set(url('../img/birds_2x.webp') 2x,
-    url('../img/birds_2x.jpg') 2x,
-    url('../img/birds.webp') 1x,
-    url('../img/birds.jpg') 1x);
-
-    @include sm {
+    &__item_birds:before {
         background-image:
-        url('../img/birds_tablet.jpg');
+        url('../img/birds.jpg');
         background-image:
-        image-set(url('../img/birds_tablet_2x.webp') 2x,
-        url('../img/birds_tablet_2x.jpg') 2x,
-        url('../img/birds_tablet.webp') 1x,
-        url('../img/birds_tablet.jpg') 1x);
+        image-set(url('../img/birds_2x.webp') 2x,
+        url('../img/birds_2x.jpg') 2x,
+        url('../img/birds.webp') 1x,
+        url('../img/birds.jpg') 1x);
+
+        @include sm {
+            background-image:
+            url('../img/birds_tablet.jpg');
+            background-image:
+            image-set(url('../img/birds_tablet_2x.webp') 2x,
+            url('../img/birds_tablet_2x.jpg') 2x,
+            url('../img/birds_tablet.webp') 1x,
+            url('../img/birds_tablet.jpg') 1x);
+        }
+
+        // @include lg {
+        //     background-image:
+        //     url('../img/birds_laptop.jpg');
+        //     background-image:
+        //     image-set(url('../img/birds_laptop.webp') 1x,
+        //     url('../img/birds_laptop.jpg') 1x,
+        //     url('../img/birds_laptop_2x.webp') 2x,
+        //     url('../img/birds_laptop_2x.jpg') 2x);
+        // }
+
+    }
+    &__item_reptiles:before {
+        background-image:
+        url('../img/reptiles.jpg');
+        background-image:
+        image-set(url('../img/reptiles_2x.webp') 2x,
+        url('../img/reptiles_2x.jpg') 2x,
+        url('../img/reptiles.webp') 1x,
+        url('../img/reptiles.jpg') 1x);
+
+        @include sm {
+            background-image:
+            url('../img/reptiles_tablet.jpg');
+            background-image:
+            image-set(url('../img/reptiles_tablet_2x.webp') 2x,
+            url('../img/reptiles_tablet_2x.jpg') 2x,
+            url('../img/reptiles_tablet.webp') 1x,
+            url('../img/reptiles_tablet.jpg') 1x);
+        }
+
+        // @include lg {
+        //     background-image:
+        //     url('../img/reptiles_laptop.jpg');
+        //     background-image:
+        //     image-set(url('../img/reptiles_laptop.webp') 1x,
+        //     url('../img/reptiles_laptop.jpg') 1x,
+        //     url('../img/reptiles_laptop_2x.webp') 2x,
+        //     url('../img/reptiles_laptop_2x.jpg') 2x);
+        // }
+    }
+    &__item_water:before {
+        background-image:
+        url('../img/water.jpg');
+        background-image:
+        image-set(url('../img/water_2x.webp') 2x,
+        url('../img/water_2x.jpg') 2x,
+        url('../img/water.webp') 1x,
+        url('../img/water.jpg') 1x);
+
+        @include sm {
+            background-image:
+            url('../img/water_tablet.jpg');
+            background-image:
+            image-set(url('../img/water_tablet_2x.webp') 2x,
+            url('../img/water_tablet_2x.jpg') 2x,
+            url('../img/water_tablet.webp') 1x,
+            url('../img/water_tablet.jpg') 1x);
+        }
+
+        // @include lg {
+        //     background-image:
+        //     url('../img/water_laptop.jpg');
+        //     background-image:
+        //     image-set(url('../img/water_laptop.webp') 1x,
+        //     url('../img/water_laptop.jpg') 1x,
+        //     url('../img/water_laptop_2x.webp') 2x,
+        //     url('../img/water_laptop_2x.jpg') 2x);
+        // }
+    }
+    &__item_insects:before {
+        background-image:
+        url('../img/insects.jpg');
+        background-image:
+        image-set(url('../img/insects_2x.webp') 2x,
+        url('../img/insects_2x.jpg') 2x,
+        url('../img/insects.webp') 1x,
+        url('../img/insects.jpg') 1x);
+
+        @include sm {
+            background-image:
+            url('../img/insects_tablet.jpg');
+            background-image:
+            image-set(url('../img/insects_tablet_2x.webp') 2x,
+            url('../img/insects_tablet_2x.jpg') 2x,
+            url('../img/insects_tablet.webp') 1x,
+            url('../img/insects_tablet.jpg') 1x);
+        }
+
+        // @include lg {
+        //     background-image:
+        //     url('../img/insects_laptop.jpg');
+        //     background-image:
+        //     image-set(url('../img/insects_laptop.webp') 1x,
+        //     url('../img/insects_laptop.jpg') 1x,
+        //     url('../img/insects_laptop_2x.webp') 2x,
+        //     url('../img/insects_laptop_2x.jpg') 2x);
+        // }
     }
 
-    // @include lg {
-    //     background-image:
-    //     url('../img/birds_laptop.jpg');
-    //     background-image:
-    //     image-set(url('../img/birds_laptop.webp') 1x,
-    //     url('../img/birds_laptop.jpg') 1x,
-    //     url('../img/birds_laptop_2x.webp') 2x,
-    //     url('../img/birds_laptop_2x.jpg') 2x);
-    // }
-
 }
-.location__item_reptiles:before {
-    background-image:
-    url('../img/reptiles.jpg');
-    background-image:
-    image-set(url('../img/reptiles_2x.webp') 2x,
-    url('../img/reptiles_2x.jpg') 2x,
-    url('../img/reptiles.webp') 1x,
-    url('../img/reptiles.jpg') 1x);
-
-    @include sm {
-        background-image:
-        url('../img/reptiles_tablet.jpg');
-        background-image:
-        image-set(url('../img/reptiles_tablet_2x.webp') 2x,
-        url('../img/reptiles_tablet_2x.jpg') 2x,
-        url('../img/reptiles_tablet.webp') 1x,
-        url('../img/reptiles_tablet.jpg') 1x);
-    }
-
-    // @include lg {
-    //     background-image:
-    //     url('../img/reptiles_laptop.jpg');
-    //     background-image:
-    //     image-set(url('../img/reptiles_laptop.webp') 1x,
-    //     url('../img/reptiles_laptop.jpg') 1x,
-    //     url('../img/reptiles_laptop_2x.webp') 2x,
-    //     url('../img/reptiles_laptop_2x.jpg') 2x);
-    // }
-}
-.location__item_water:before {
-    background-image:
-    url('../img/water.jpg');
-    background-image:
-    image-set(url('../img/water_2x.webp') 2x,
-    url('../img/water_2x.jpg') 2x,
-    url('../img/water.webp') 1x,
-    url('../img/water.jpg') 1x);
-
-    @include sm {
-        background-image:
-        url('../img/water_tablet.jpg');
-        background-image:
-        image-set(url('../img/water_tablet_2x.webp') 2x,
-        url('../img/water_tablet_2x.jpg') 2x,
-        url('../img/water_tablet.webp') 1x,
-        url('../img/water_tablet.jpg') 1x);
-    }
-
-    // @include lg {
-    //     background-image:
-    //     url('../img/water_laptop.jpg');
-    //     background-image:
-    //     image-set(url('../img/water_laptop.webp') 1x,
-    //     url('../img/water_laptop.jpg') 1x,
-    //     url('../img/water_laptop_2x.webp') 2x,
-    //     url('../img/water_laptop_2x.jpg') 2x);
-    // }
-}
-.location__item_insects:before {
-    background-image:
-    url('../img/insects.jpg');
-    background-image:
-    image-set(url('../img/insects_2x.webp') 2x,
-    url('../img/insects_2x.jpg') 2x,
-    url('../img/insects.webp') 1x,
-    url('../img/insects.jpg') 1x);
-
-    @include sm {
-        background-image:
-        url('../img/insects_tablet.jpg');
-        background-image:
-        image-set(url('../img/insects_tablet_2x.webp') 2x,
-        url('../img/insects_tablet_2x.jpg') 2x,
-        url('../img/insects_tablet.webp') 1x,
-        url('../img/insects_tablet.jpg') 1x);
-    }
-
-    // @include lg {
-    //     background-image:
-    //     url('../img/insects_laptop.jpg');
-    //     background-image:
-    //     image-set(url('../img/insects_laptop.webp') 1x,
-    //     url('../img/insects_laptop.jpg') 1x,
-    //     url('../img/insects_laptop_2x.webp') 2x,
-    //     url('../img/insects_laptop_2x.jpg') 2x);
-    // }
-}
-
