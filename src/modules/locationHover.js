@@ -50,8 +50,8 @@ export const locationHover = () => {
                     tl.play();
 
                     gsap.to(locationList, {
-                        'background-image': `url('${item.dataset.image}')`,
-                        'opacity': 1,
+                        '--background-image': `url('${item.dataset.image}')`,
+                        '--opacity': 1,
                         duration: 1,
                     })
                 }
@@ -61,7 +61,7 @@ export const locationHover = () => {
                     tl.reverse();
 
                     gsap.to(locationList, {
-                        'opacity': 0,
+                        '--opacity': 0,
                         duration: 1,
                     })
 

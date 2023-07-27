@@ -20,7 +20,7 @@
             }
 
             &::after {
-                content: 0;
+                content: '';
                 position: absolute;
                 inset: 0;
                 z-index: -1;
@@ -93,14 +93,6 @@
         }
     }
 
-    .video-bg {
-        display: none;
-
-        @include lg {
-            display: block;
-        }
-    }
-
 
 
     &__item {
@@ -123,7 +115,7 @@
             padding: 0;
         }
 
-        &:not(:last-child):after { // полоска
+        &:not(:last-child)::after { // полоска
             content: '';
             position: absolute;
             z-index: 5;
@@ -311,4 +303,11 @@
         // }
     }
 
+}
+.video-bg {
+    display: none;
+
+    @include lg {
+        display: block;
+    }
 }
