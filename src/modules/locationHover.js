@@ -37,28 +37,53 @@ export const locationHover = () => {
                 duration: 0,
             })
             .to(description, {
-                display: 'block', duration: 0,
+                display: 'block',
+                duration: 0,
             })
             .to(content, {
-                opacity: 1,duration: 0.5,
-            })
+                opacity: 1,
+                duration: 0.5,
+            });
             //mouseenter - мышка зашла на элемент
             item.addEventListener('mouseenter', () => {
                 if(mediaQueryLG.matches) {
                     tl.play();
+
+                    gsap.to(locationList, {
+                        'background-image': `url('${item.dataset.image}')`,
+                        'opacity': 1,
+                        duration: 1,
+                    })
                 }
             });
             item.addEventListener('mouseleave', () => {
                 if(mediaQueryLG.matches) {
                     tl.reverse();
+
+                    gsap.to(locationList, {
+                        'opacity': 0,
+                        duration: 1,
+                    })
+
                 }
             });
+
+            const linkPreload = document.createElement('link');
+            linkPreload.rel = 'preload';
+            linkPreload.href = item.dataset.image;
+            linkPreload.as = 'image';
+
+            if (mediaQueryLG.matches) {
+                document?.head.append(linkPreload);
+            }
 
             mediaQueryLG.addEventListener('change', (e) => {
                 if(!e.matches) {
                     content.style = '';
                     title.style = '';
                     description.style = '';
+                } else {
+                    document?.head.append(linkPreload)
                 }
             })
     };
