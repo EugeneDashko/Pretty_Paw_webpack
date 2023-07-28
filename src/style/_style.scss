@@ -162,6 +162,13 @@ iframe {
   }
 }
 
+.arrow-top {
+  
+  &:hover {
+    color: $back;
+  }
+}
+
 
 .swiper-pagination-bullet {  // задаю стили swiper
   width: 10px;

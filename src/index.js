@@ -9,11 +9,13 @@ import { slidersInit } from './modules/sliders.js';
 import { videoBackgroundInit } from './modules/videoBackGround.js';
 import { menuControl } from './modules/menuControl.js';
 import { locationHover } from './modules/locationHover.js';
+import { initScrollTopButton } from './modules/scrollTopButton.js';
 
 //use modules
 videoBackgroundInit();
 menuControl();
 locationHover();
+initScrollTopButton('arrow-top');
 
 slidersInit('.about__slider', {
     pagination: {
