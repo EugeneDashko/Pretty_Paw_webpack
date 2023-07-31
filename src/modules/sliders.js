@@ -9,6 +9,7 @@ const params = {
     slidesPerView: 1, // кол-во отображаемых файлов
     pagination: {
         el: '.swiper-pagination',
+        enabled: true,
     },
     modules: [Autoplay, Pagination]
 };
