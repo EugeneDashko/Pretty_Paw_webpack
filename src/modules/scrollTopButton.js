@@ -1,3 +1,20 @@
+//функция, которая запрещает большое количество вызовов
+const debounceRAF = (fn) => {
+    lastCall = 0;
+    let lastCalltimer = 0;
+
+    return (...arg) => {
+        const prevCall = lastCall;
+        lastCall = Date.now();
+
+        if (prevCall && (lastCall - prevCall) < msec) {
+            clearTimeout(lastCallTimer)
+        }
+
+        lastCalltimer = setTimeout(() => fn(...arg), msec)
+            clearTimeout(lastCallTimer)
+    }
+}
 const createArrow = (className = 'arrow-up', hover = true) => {
     const button = document.createElement('button');
 
@@ -38,6 +55,8 @@ const createArrow = (className = 'arrow-up', hover = true) => {
         }
     `;
     document?.head.prepend(style);
+
+
 //прокручивание вверх при клике
     button.addEventListener('click', () => {
         window.scrollTo ({
@@ -49,18 +68,18 @@ const createArrow = (className = 'arrow-up', hover = true) => {
     return button
 }
 
-export const initScrollTopButton = (className, hover) => {
-    const arrow = createArrow(className, hover);
+
+
+export const initScrollTopButton = (className, options) => {
+    const arrow = createArrow(className, options);
 
     document?.body.append(arrow);
 
     const showElemScrollPosition = () => {
 
         const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
         arrow.style.display = (scrollPosition > window.innerHeight / 2) ? 'flex' : 'none';
-
     };
 
-    window.addEventListener('scroll', showElemScrollPosition);
+    window.addEventListener('scroll', showElemScrollPosition, 100);
 };

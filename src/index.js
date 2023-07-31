@@ -20,6 +20,7 @@ initScrollTopButton('arrow-top');
 slidersInit('.about__slider', {
     pagination: {
         el: '.about__slider-pagination',
+        enabled: true,
     }
 });
 
@@ -31,25 +32,32 @@ careerImageItems.forEach((item, index)=> {
 slidersInit('.career__slider', {
     pagination: {
         el: '.career__slider-pagination',
+        enabled: true,
     },
     breakpoints: {
         // when window width is >= 320px
         576: {
           slidesPerView: 'auto',
           spaceBetween: 20,
-          pagination: false
+          pagination: {
+            enabled: false,
+          }
         },
         // when window width is >= 480px
         1024: {
           slidesPerView: 'auto',
           spaceBetween: 26,
-          pagination: false
+          pagination: {
+            enabled: false,
+          }
         },
         // when window width is >= 640px
         1240: {
           slidesPerView: 'auto',
           spaceBetween: 30,
-          pagination: false
+          pagination: {
+            enabled: false,
+          }
         }
       }
 })
