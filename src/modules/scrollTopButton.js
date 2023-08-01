@@ -68,8 +68,6 @@ const createArrow = (className = 'arrow-up', hover = true) => {
     return button
 }
 
-
-
 export const initScrollTopButton = (className, options) => {
     const arrow = createArrow(className, options);
 

@@ -10,12 +10,13 @@ import { videoBackgroundInit } from './modules/videoBackGround.js';
 import { menuControl } from './modules/menuControl.js';
 import { locationHover } from './modules/locationHover.js';
 import { initScrollTopButton } from './modules/scrollTopButton.js';
-
+import { pageControlInit } from './modules/pageControl.js'
 //use modules
 videoBackgroundInit();
 menuControl();
 locationHover();
 initScrollTopButton('arrow-top');
+pageControlInit();
 
 slidersInit('.about__slider', {
     pagination: {
