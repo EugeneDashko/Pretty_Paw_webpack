@@ -93,7 +93,6 @@ iframe {
 .container {
   padding-left: 16px;
   padding-right: 16px;
-  margin: 0 auto;
 
   @include sm {
     padding: 0 24px;
@@ -130,7 +129,7 @@ iframe {
   outline: none;
 
 
-  // стрелка в кнопке:
+  // стрелка в кнопке:е
   &:after {
     content: '';
     display: block;

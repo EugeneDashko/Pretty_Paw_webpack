@@ -12,7 +12,6 @@ const showSection = () => {
         const linkUrl = link.getAttribute('href');
         const hashIndex = linkUrl.indexOf('#');
         const linkHash = hashIndex !== -1 ? linkUrl.substring(hashIndex +1) : '';
-        console.log('linkHash: ', linkHash);
 
         let classActive = '';
 
